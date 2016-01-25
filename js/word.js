@@ -10,7 +10,7 @@ var Word = function(wrd){
     }
   };
   this.checkIfLetterFound = function(guessLetter) {
-    var whatToReturn = 0
+    var whatToReturn = 0;
     for (var i = 0; i < this.lets.length; i++) {
       if (this.lets[i].charac === guessLetter){
         this.lets[i].appear = true;
@@ -25,4 +25,13 @@ var Word = function(wrd){
     });
     return this.found;
   };
+  this.wordRender = function(){
+    var str = "";
+    for (var i = 0; i < this.lets.length; i++) {
+      str += this.lets[i].letterRender();
+    };
+    return str;
+  };
 }
+
+module.exports = Word;
